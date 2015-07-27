@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">大导演</string>
+
+    <string name="time_to_bonus">距离颁奖日期还有 60 天</string>
+    <string name="action_settings">Settings</string>
+    <string name="curse">日程</string>
+
+</resources>

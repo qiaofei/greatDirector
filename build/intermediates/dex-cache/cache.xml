@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Administrator\AppData\Local\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="F:\Codes\Great\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-205ec8fcc4607e36aada470047c7eb10a78119d8.jar" />
+    </item>
+    <item
+        jar="F:\Codes\Great\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="F:\Codes\Great\app\build\intermediates\pre-dexed\debug\classes-8d97761291f34626cb1014406152005af8c95e67.jar" />
+    </item>
+    <item
+        jar="F:\Codes\Great\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="F:\Codes\Great\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-4166f335f3e392b2627a9b4321f8f5faf46d180c.jar" />
+    </item>
+    <item
+        jar="F:\Codes\Great\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="F:\Codes\Great\app\build\intermediates\pre-dexed\debug\classes-5ae195272fd4774c35c1e470b3a02e0fb660e4a1.jar" />
+    </item>
+    <item
+        jar="F:\Codes\Great\app\libs\android-support-v4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="fde22d8d2ef6363324a3d79a1dd16c8645c25564">
+        <dex dex="F:\Codes\Great\app\build\intermediates\pre-dexed\debug\android-support-v4-fe0269a106d381a3e68142b36e86078cd8f0a407.jar" />
+    </item>
+
+</items>
