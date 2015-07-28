@@ -16,6 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".PlayMovieActivity">
+        </activity>
+        <activity
+            android:name=".DirectorInfo">
+        </activity>
     </application>
 
 </manifest>

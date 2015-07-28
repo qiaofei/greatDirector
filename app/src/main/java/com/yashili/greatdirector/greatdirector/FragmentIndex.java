@@ -1,6 +1,7 @@
 package com.yashili.greatdirector.greatdirector;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -93,14 +94,47 @@ public class FragmentIndex extends Fragment {
             ImageView imgHotDirectors = (ImageView) viewHotDirectors
                     .findViewById(R.id.imageview_info);
             imgHotDirectors.setImageResource(hotDirectorsImgIds[i]);
+            imgHotDirectors.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(),DirectorInfo.class);
+                    /*Bundle bundle = new Bundle();
+                    bundle.putString("movieName", newMoviesText[i]);     //装入数据
+                    intent.putExtras(bundle);*/
+                    startActivity(intent);
+                }
+            });
             ImageView imgNewMovies = (ImageView) viewNewMovies
                     .findViewById(R.id.imageview_info);
             imgNewMovies.setImageResource(newMoviesImgIds[i]);
 
+            //设置侦听事件
+            //imgNewMovies.setOnClickListener(this);
+            imgNewMovies.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(),PlayMovieActivity.class);
+                    /*Bundle bundle = new Bundle();
+                    bundle.putString("movieName", newMoviesText[i]);     //装入数据
+                    intent.putExtras(bundle);*/
+                    startActivity(intent);
+                }
+            });
+
             ImageView imgHotMovies = (ImageView) viewHotMovies
                     .findViewById(R.id.imageview_info);
             imgHotMovies.setImageResource(hotMoviesImgIds[i]);
-
+            //点击图片跳转
+            imgHotMovies.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(), PlayMovieActivity.class);
+                    /*Bundle bundle = new Bundle();
+                    bundle.putString("movieName", newMoviesText[i]);     //装入数据
+                    intent.putExtras(bundle);*/
+                    startActivity(intent);
+                }
+            });
             //设置每个导演和影片的名字
             TextView textViewHotDirectors = (TextView) viewHotDirectors
                     .findViewById(R.id.textview_info);
