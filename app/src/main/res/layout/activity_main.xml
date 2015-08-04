@@ -11,156 +11,93 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="50dp"
+        android:background="#1F1F1F"
+        android:orientation="horizontal">
 
         <RelativeLayout
             android:id="@+id/index_layout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="#1F1F1F"
+            android:gravity="center">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/index_image"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/index_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@mipmap/bottom_feed_normal" />
-
-                <TextView
-                    android:id="@+id/index_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="首页"
-                    android:textColor="#7597B3" />
-            </LinearLayout>
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/index_image" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/star_layout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="#1F1F1F"
+            android:gravity="center_vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+
+            <ImageView
+                android:id="@+id/star_image"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:orientation="vertical">
+                android:src="@mipmap/star_image" />
 
-                <ImageView
-                    android:id="@+id/star_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@mipmap/bottom_my_normal" />
-
-                <TextView
-                    android:id="@+id/star_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="明星"
-                    android:textColor="#7597B3" />
-
-            </LinearLayout>
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/search_layout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="#1F1F1F"
+            android:gravity="center_horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/search_image"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/sear_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@mipmap/search_default" />
-
-                <TextView
-                    android:id="@+id/sear_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="搜索"
-                    android:textColor="#7597B3" />
-
-            </LinearLayout>
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/sear_image" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/favorite_layout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="#1F1F1F"
+            android:gravity="center_vertical|right">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/favorite_image"
+
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/favorite_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@mipmap/bottom_hotrank_normal" />
-
-                <TextView
-                    android:id="@+id/favorite_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="关注"
-                    android:textColor="#7597B3" />
-
-            </LinearLayout>
+                android:src="@mipmap/favorite_image" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/my_layout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="#1F1F1F"
+            android:gravity="center">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/my_image"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/my_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@mipmap/bottom_my_normal" />
-
-                <TextView
-                    android:id="@+id/my_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="个人"
-                    android:textColor="#7597B3" />
-
-            </LinearLayout>
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/my_image" />
         </RelativeLayout>
-
     </LinearLayout>
 </LinearLayout>

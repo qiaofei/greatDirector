@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -18,6 +17,10 @@ public class FragmentIndex extends Fragment {
     private LinearLayout hotDirectorsLayout;
     private LinearLayout newMoviesLayout;
     private LinearLayout hotMoviesLayout;
+    private LinearLayout timeToBonusLayout;
+    private LinearLayout famousDirectorLayout;
+    private LinearLayout movieCategoryLayout;
+    private LinearLayout bonusCategoryLayout;
     //热门导演数组
     private int[] hotDirectorsImgIds;
     private String[] hotDirectsorsText;
@@ -30,6 +33,18 @@ public class FragmentIndex extends Fragment {
     private int[] hotMoviesImgIds;
     private String[] hotMoviesText;
 
+    //名家数组
+    private int[] famousDirectorImgIds;
+    private String[] famousDirectorText;
+
+    //题材数组
+    private int[] movieCategoryImgIds;
+    private String[] movieCategoryText;
+
+    //奖项数组
+    private int[] bonusCategoryImgIds;
+    private String[] bonusCategoryText;
+
     private LayoutInflater mInflater;
     private Context context;
 
@@ -37,9 +52,10 @@ public class FragmentIndex extends Fragment {
     }
 
 
-    public void setContext(Context context){
+    public void setContext(Context context) {
         this.context = context;
     }
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstancestate) {
         View view = inflater.inflate(R.layout.fragment_index, container, false);
         mInflater = LayoutInflater.from(context);
@@ -59,7 +75,7 @@ public class FragmentIndex extends Fragment {
         };
 
         newMoviesImgIds = new int[]{R.mipmap.dianying01, R.mipmap.dianying02, R.mipmap.dianying03,
-                R.mipmap.dianying04, R.mipmap.dianying05, R.mipmap.dianying06, R.mipmap.dianying07,
+                R.mipmap.dianying04, R.mipmap.dianying18, R.mipmap.dianying06, R.mipmap.dianying07,
 
         };
         newMoviesText = new String[]{
@@ -73,6 +89,33 @@ public class FragmentIndex extends Fragment {
         hotMoviesText = new String[]{
                 "卧虎藏龙", "后窗", "非常嫌疑犯", "低级小说", "西北偏北", "好家伙", "肖申克的救赎"
         };
+        //设置名家排行的图片和文字
+        famousDirectorImgIds = new int[]{
+                R.mipmap.touxiang5, R.mipmap.touxiang4, R.mipmap.touxiang3,
+                R.mipmap.touxiang7, R.mipmap.touxiang1, R.mipmap.touxiang2, R.mipmap.touxiang6,
+        };
+        famousDirectorText = new String[]{
+                "贾樟柯", "李安", "王家卫", "张艺谋", "陈凯歌", "冯小刚", "斯皮尔伯格"
+        };
+        //设置题材图片和文字
+        movieCategoryImgIds = new int[]{
+                R.mipmap.dianying08, R.mipmap.dianying09, R.mipmap.dianying10,
+                R.mipmap.dianying11, R.mipmap.dianying15, R.mipmap.dianying16, R.mipmap.dianying17,
+        };
+        movieCategoryText = new String[]{
+                "科幻", "儿童", "综艺", "搞笑", "纪录片", "悬疑", "动漫"
+        };
+
+        //设置奖项图片和文字
+        bonusCategoryImgIds = new int[]{
+                R.mipmap.dianying08, R.mipmap.dianying09, R.mipmap.dianying10,
+                R.mipmap.dianying11, R.mipmap.dianying15, R.mipmap.dianying16,
+                R.mipmap.dianying17, R.mipmap.dianying18
+        };
+        bonusCategoryText = new String[]{
+                "最佳微电影奖", "最佳栏目剧奖 ", "最佳纪录片奖", "最佳儿童剧奖",
+                "最佳电视剧奖", "最佳企宣片奖", "最佳产品片奖", "最佳晚会导演"
+        };
     }
 
     //视图id等初始化
@@ -80,7 +123,12 @@ public class FragmentIndex extends Fragment {
         hotDirectorsLayout = (LinearLayout) view.findViewById(R.id.hot_directors);
         newMoviesLayout = (LinearLayout) view.findViewById(R.id.new_movies);
         hotMoviesLayout = (LinearLayout) view.findViewById(R.id.hot_movies);
-
+        famousDirectorLayout = (LinearLayout) view.findViewById(R.id.famous_director);
+        movieCategoryLayout = (LinearLayout) view.findViewById(R.id.movie_category);
+        bonusCategoryLayout = (LinearLayout) view.findViewById(R.id.bonus_category);
+        timeToBonusLayout = (LinearLayout) view.findViewById(R.id.time_tobonus);
+        //切换到奖项的fragment
+//        timeToBonusLayout.setOnClickListener(new);
         for (int i = 0; i < hotDirectorsImgIds.length; i++) {
 
             View viewHotDirectors = mInflater.inflate(R.layout.info_layout_item,
@@ -89,49 +137,76 @@ public class FragmentIndex extends Fragment {
                     newMoviesLayout, false);
             View viewHotMovies = mInflater.inflate(R.layout.info_layout_item,
                     hotMoviesLayout, false);
-
+            View viewFamousDirector = mInflater.inflate(R.layout.info_layout_item,
+                    famousDirectorLayout, false);
+            View viewMovieCategory = mInflater.inflate(R.layout.info_layout_item,
+                    movieCategoryLayout, false);
+            View viewBonusCategory = mInflater.inflate(R.layout.info_layout_item,
+                    bonusCategoryLayout, false);
             //设置每个导演和影片的封面
-            ImageView imgHotDirectors = (ImageView) viewHotDirectors
-                    .findViewById(R.id.imageview_info);
-            imgHotDirectors.setImageResource(hotDirectorsImgIds[i]);
-            imgHotDirectors.setOnClickListener(new View.OnClickListener() {
+
+            viewHotDirectors.setBackgroundResource(hotDirectorsImgIds[i]);
+            viewHotDirectors.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getActivity(),DirectorInfo.class);
-                    /*Bundle bundle = new Bundle();
-                    bundle.putString("movieName", newMoviesText[i]);     //装入数据
-                    intent.putExtras(bundle);*/
+                    Intent intent = new Intent(getActivity(), DirectorInfo.class);
                     startActivity(intent);
                 }
             });
-            ImageView imgNewMovies = (ImageView) viewNewMovies
-                    .findViewById(R.id.imageview_info);
-            imgNewMovies.setImageResource(newMoviesImgIds[i]);
+
+            viewNewMovies.setBackgroundResource(newMoviesImgIds[i]);
 
             //设置侦听事件
             //imgNewMovies.setOnClickListener(this);
-            imgNewMovies.setOnClickListener(new View.OnClickListener() {
+            viewNewMovies.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getActivity(),PlayMovieActivity.class);
-                    /*Bundle bundle = new Bundle();
-                    bundle.putString("movieName", newMoviesText[i]);     //装入数据
-                    intent.putExtras(bundle);*/
+                    Intent intent = new Intent(getActivity(), PlayMovieActivity.class);
                     startActivity(intent);
                 }
             });
 
-            ImageView imgHotMovies = (ImageView) viewHotMovies
-                    .findViewById(R.id.imageview_info);
-            imgHotMovies.setImageResource(hotMoviesImgIds[i]);
+
+            viewHotMovies.setBackgroundResource(hotMoviesImgIds[i]);
             //点击图片跳转
-            imgHotMovies.setOnClickListener(new View.OnClickListener() {
-                @Override
+            viewHotMovies.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     Intent intent = new Intent(getActivity(), PlayMovieActivity.class);
                     /*Bundle bundle = new Bundle();
                     bundle.putString("movieName", newMoviesText[i]);     //装入数据
                     intent.putExtras(bundle);*/
+                    startActivity(intent);
+                }
+            });
+            //设置名家展示图片
+            viewFamousDirector.setBackgroundResource(famousDirectorImgIds[i]);
+            //点击图片跳转
+            viewFamousDirector.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(), PlayMovieActivity.class);
+                    /*Bundle bundle = new Bundle();
+                    bundle.putString("movieName", newMoviesText[i]);     //装入数据
+                    intent.putExtras(bundle);*/
+                    startActivity(intent);
+                }
+            });
+
+            //设置题材分类背景图片
+            viewMovieCategory.setBackgroundResource(movieCategoryImgIds[i]);
+            //点击图片跳转
+            viewMovieCategory.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(), PlayMovieActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+            //设置奖项分类背景图片
+            viewBonusCategory.setBackgroundResource(bonusCategoryImgIds[i]);
+            //点击图片跳转
+            viewBonusCategory.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(), PlayMovieActivity.class);
                     startActivity(intent);
                 }
             });
@@ -145,11 +220,28 @@ public class FragmentIndex extends Fragment {
             TextView texthotMovies = (TextView) viewHotMovies
                     .findViewById(R.id.textview_info);
             texthotMovies.setText(hotMoviesText[i]);
+            //设置名家展示文字
+            TextView textFamousDirector = (TextView) viewFamousDirector
+                    .findViewById(R.id.textview_info);
+            textFamousDirector.setText(famousDirectorText[i]);
+
+            //设置题材分类文字
+            TextView textMovieCategory = (TextView) viewMovieCategory
+                    .findViewById(R.id.textview_info);
+            textMovieCategory.setText(movieCategoryText[i]);
+
+            //设置奖项分类文字
+            TextView textBonusCategory = (TextView) viewBonusCategory
+                    .findViewById(R.id.textview_info);
+            textBonusCategory.setText(bonusCategoryText[i]);
 
             //将item添加到对应的layout中去
             hotDirectorsLayout.addView(viewHotDirectors);
             newMoviesLayout.addView(viewNewMovies);
             hotMoviesLayout.addView(viewHotMovies);
+            famousDirectorLayout.addView(viewFamousDirector);
+            movieCategoryLayout.addView(viewMovieCategory);
+            bonusCategoryLayout.addView(viewBonusCategory);
         }
     }
 }

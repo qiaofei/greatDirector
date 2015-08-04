@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
@@ -28,41 +27,49 @@
         android:ellipsize="end"
         android:maxLines="4"
         android:text="　为了巩固两人的婚姻，泰迪（塞思·麦克法兰 Seth MacFarlane 配音）和泰米琳（杰西卡·巴斯 Jessica Barth 饰）产生了要一个孩子的念头，在尝试了各种方法无果后，两人决定领养  然而，此时泰迪却发现政府并没有将他当做一个真正的“人”，而仅仅只是一份“财产”，因此，他不仅无法领养" />
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_marginTop="20dp">
-    <TextView
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:text="评论512"/>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
-        android:src="@mipmap/feed_like_default"/>
-    <TextView
-        android:layout_marginLeft="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="喜欢"/>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/forward_default"
-        android:layout_marginLeft="20dp"/>
-    <TextView
-        android:layout_marginLeft="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="分享"/>
-</LinearLayout>
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="评论512" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:src="@mipmap/feed_like_default" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="喜欢" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:src="@mipmap/forward_default" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="分享" />
+    </LinearLayout>
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"></ListView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -75,12 +82,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="写下你的评论吧..."
-            />
+            android:hint="写下你的评论吧..." />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="发表"/>
+            android:text="发表" />
     </LinearLayout>
 
 </LinearLayout>

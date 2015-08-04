@@ -5,9 +5,9 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener {
@@ -15,21 +15,19 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private FragmentStar Fragmentstar;
     private FragmentFavorite Fragmentfavorite;
     private FragmentMy Fragmentmy;
+    private FragmentSearch Fragmentsearch;
 
     private RelativeLayout index_layout;
     private RelativeLayout star_layout;
     private RelativeLayout favorite_layout;
     private RelativeLayout my_layout;
+    private RelativeLayout search_layout;
 
     private ImageView index_image;
     private ImageView star_image;
     private ImageView favorite_image;
     private ImageView my_image;
-
-    private TextView index_text;
-    private TextView star_text;
-    private TextView favorite_text;
-    private TextView my_text;
+    private ImageView search_image;
 
     private int whirt = 0xFFFFFFFF;
     private int gray = 0xFF7597B3;
@@ -40,6 +38,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         fManager = getSupportFragmentManager();
         initViews();
@@ -55,22 +54,20 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         star_image = (ImageView) findViewById(R.id.star_image);
         favorite_image = (ImageView) findViewById(R.id.favorite_image);
         my_image = (ImageView) findViewById(R.id.my_image);
-        //四个切换按钮的文字
-        index_text = (TextView) findViewById(R.id.index_text);
-        favorite_text = (TextView) findViewById(R.id.favorite_text);
-        star_text = (TextView) findViewById(R.id.star_text);
-        my_text = (TextView) findViewById(R.id.my_text);
+        search_image = (ImageView) findViewById(R.id.search_image);
+
         //四个切换按钮的布局id
         index_layout = (RelativeLayout) findViewById(R.id.index_layout);
         star_layout = (RelativeLayout) findViewById(R.id.star_layout);
         favorite_layout = (RelativeLayout) findViewById(R.id.favorite_layout);
         my_layout = (RelativeLayout) findViewById(R.id.my_layout);
-
+        search_layout = (RelativeLayout) findViewById(R.id.search_layout);
         //设置布局侦听事件
         index_layout.setOnClickListener(this);
         star_layout.setOnClickListener(this);
         favorite_layout.setOnClickListener(this);
         my_layout.setOnClickListener(this);
+        search_layout.setOnClickListener(this);
     }
 
     @Override
@@ -88,6 +85,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             case R.id.my_layout:
                 setChioceItem(3);
                 break;
+            case R.id.search_layout:
+                setChioceItem(4);
+                break;
             default:
                 break;
         }
@@ -102,8 +102,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         hideFragments(transaction);
         switch (index) {
             case 0:
-                index_image.setImageResource(R.mipmap.bottom_feed_normal);
-                index_text.setTextColor(blue);
+                index_image.setImageResource(R.mipmap.index_image);
                 //index_layout.setBackgroundResource(R.mipmap.bottom_feed_press);
                 if (Fragmentindex == null) {
                     Fragmentindex = new FragmentIndex();
@@ -115,8 +114,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
 
             case 1:
-                star_image.setImageResource(R.mipmap.bottom_my_normal);
-                star_text.setTextColor(blue);
+                star_image.setImageResource(R.mipmap.star_image);
                 //star_layout.setBackgroundResource(R.mipmap.bottom_my_press);
                 if (Fragmentstar == null) {
                     Fragmentstar = new FragmentStar();
@@ -127,8 +125,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
 
             case 2:
-                favorite_image.setImageResource(R.mipmap.bottom_hotrank_normal);
-                favorite_text.setTextColor(blue);
+                favorite_image.setImageResource(R.mipmap.favorite_image);
                // favorite_layout.setBackgroundResource(R.mipmap.bottom_hotrank_press);
                 if (Fragmentfavorite == null) {
                     Fragmentfavorite = new FragmentFavorite();
@@ -139,14 +136,24 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
 
             case 3:
-                my_image.setImageResource(R.mipmap.bottom_my_normal);
-                my_text.setTextColor(blue);
+                my_image.setImageResource(R.mipmap.my_image);
                // my_layout.setBackgroundResource(R.mipmap.bottom_my_press);
                 if (Fragmentmy == null) {
                     Fragmentmy = new FragmentMy();
                     transaction.add(R.id.content, Fragmentmy);
                 } else {
                     transaction.show(Fragmentmy);
+                }
+                break;
+
+            case 4:
+                search_image.setImageResource(R.mipmap.sear_image);
+                // my_layout.setBackgroundResource(R.mipmap.bottom_my_press);
+                if (Fragmentsearch == null) {
+                    Fragmentsearch = new FragmentSearch();
+                    transaction.add(R.id.content, Fragmentsearch);
+                } else {
+                    transaction.show(Fragmentsearch);
                 }
                 break;
         }
@@ -166,26 +173,28 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         if (Fragmentmy != null) {
             transaction.hide(Fragmentmy);
         }
+        if (Fragmentsearch != null) {
+            transaction.hide(Fragmentsearch);
+        }
     }
 
 
     public void clearChioce()
     {
-        index_image.setImageResource(R.mipmap.bottom_feed_normal);
-        index_layout.setBackgroundColor(whirt);
-        index_text.setTextColor(gray);
+        index_image.setImageResource(R.mipmap.index_image);
+//        index_layout.setBackgroundColor(whirt);
 
-        star_image.setImageResource(R.mipmap.bottom_my_normal);
-        star_layout.setBackgroundColor(whirt);
-        star_text.setTextColor(gray);
 
-        favorite_text.setTextColor(gray);
-        favorite_image.setImageResource(R.mipmap.bottom_hotrank_normal);
-        favorite_layout.setBackgroundColor(whirt);
+        star_image.setImageResource(R.mipmap.star_image);
+//        star_layout.setBackgroundColor(whirt);
 
-        my_text.setTextColor(gray);
-        my_image.setImageResource(R.mipmap.bottom_my_normal);
-        my_layout.setBackgroundColor(whirt);
+
+        favorite_image.setImageResource(R.mipmap.favorite_image);
+//        favorite_layout.setBackgroundColor(whirt);
+
+        my_image.setImageResource(R.mipmap.my_image);
+//        my_layout.setBackgroundColor(whirt);
+        search_image.setImageResource(R.mipmap.sear_image);
     }
 
 }
