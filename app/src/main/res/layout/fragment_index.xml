@@ -4,24 +4,7 @@
     android:layout_height="match_parent"
     android:background="#1F1F1F"
     android:orientation="vertical">
-    <LinearLayout
-        android:id="@+id/time_tobonus"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:background="@mipmap/timetobonus"
-        android:gravity="center">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_gravity="center_vertical"
-            android:gravity="center_vertical"
-            android:text="距离颁奖时间还有 60 天"
-            android:textColor="#1F1F1F"
-            android:textSize="20dp" />
-    </LinearLayout>
 
     <ScrollView
         android:layout_width="wrap_content"

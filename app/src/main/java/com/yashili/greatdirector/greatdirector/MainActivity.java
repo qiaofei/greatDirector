@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -17,12 +18,14 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private FragmentFavorite Fragmentfavorite;
     private FragmentMy Fragmentmy;
     private FragmentSearch Fragmentsearch;
+    private FragmentShowBonus fragmentShowBonus;
 
     private RelativeLayout index_layout;
     private RelativeLayout star_layout;
     private RelativeLayout favorite_layout;
     private RelativeLayout my_layout;
     private RelativeLayout search_layout;
+    private LinearLayout showBonusLayout;
 
     private ImageView index_image;
     private ImageView star_image;
@@ -30,14 +33,10 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private ImageView my_image;
     private ImageView search_image;
 
-    private int whirt = 0xFFFFFFFF;
-    private int gray = 0xFF7597B3;
-    private int blue =0xFF0AB2FB;
     FragmentManager fManager;
     private SlideMenu slideMenu;
 
     private TextView titleBarText;
-    private ImageView titleBarImg;
     private RelativeLayout titleBarLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +54,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     {
         //侧边栏
         titleBarLayout = (RelativeLayout) findViewById(R.id.title_bar_layout);
-        titleBarImg = (ImageView) findViewById(R.id.title_bar_menu_btn);
         titleBarText = (TextView)findViewById(R.id.title_bar_text);
         slideMenu = (SlideMenu) findViewById(R.id.slide_menu);
         ImageView menuImg = (ImageView) findViewById(R.id.title_bar_menu_btn);
@@ -73,12 +71,15 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         favorite_layout = (RelativeLayout) findViewById(R.id.favorite_layout);
         my_layout = (RelativeLayout) findViewById(R.id.my_layout);
         search_layout = (RelativeLayout) findViewById(R.id.search_layout);
+        showBonusLayout = (LinearLayout)findViewById(R.id.time_tobonus);
+
         //设置布局侦听事件
         index_layout.setOnClickListener(this);
         star_layout.setOnClickListener(this);
         favorite_layout.setOnClickListener(this);
         my_layout.setOnClickListener(this);
         search_layout.setOnClickListener(this);
+        showBonusLayout.setOnClickListener(this);
     }
 
     @Override
@@ -99,6 +100,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             case R.id.search_layout:
                 setChioceItem(4);
                 break;
+            case R.id.time_tobonus:
+                setChioceItem(5);
+                break;
             case R.id.title_bar_menu_btn:
                 if (slideMenu.isMainScreenShowing()) {
                     slideMenu.openMenu();
@@ -116,13 +120,14 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     public void setChioceItem(int index)
     {
         FragmentTransaction transaction = fManager.beginTransaction();
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         clearChioce();
         hideFragments(transaction);
         switch (index) {
-            case 0:
+            case 0:showBonusLayout.setVisibility(View.VISIBLE);
                 titleBarLayout.setVisibility(View.VISIBLE);
                 titleBarText.setText("大导演");
-                index_image.setImageResource(R.mipmap.index_image);
+                index_image.setImageResource(R.mipmap.index_image_pressed);
                 //index_layout.setBackgroundResource(R.mipmap.bottom_feed_press);
                 if (Fragmentindex == null) {
                     Fragmentindex = new FragmentIndex();
@@ -134,9 +139,10 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
 
             case 1:
+                showBonusLayout.setVisibility(View.GONE);
                 titleBarLayout.setVisibility(View.VISIBLE);
                 titleBarText.setText("明星社区");
-                star_image.setImageResource(R.mipmap.star_image);
+                star_image.setImageResource(R.mipmap.star_image_pressed);
                 //star_layout.setBackgroundResource(R.mipmap.bottom_my_press);
                 if (Fragmentstar == null) {
                     Fragmentstar = new FragmentStar();
@@ -148,9 +154,10 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
 
             case 2:
+                showBonusLayout.setVisibility(View.GONE);
                 titleBarLayout.setVisibility(View.VISIBLE);
                 titleBarText.setText("关注");
-                favorite_image.setImageResource(R.mipmap.favorite_image);
+                favorite_image.setImageResource(R.mipmap.favorite_image_pressed);
                // favorite_layout.setBackgroundResource(R.mipmap.bottom_hotrank_press);
                 if (Fragmentfavorite == null) {
                     Fragmentfavorite = new FragmentFavorite();
@@ -161,9 +168,10 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
 
             case 3:
+                showBonusLayout.setVisibility(View.GONE);
                 titleBarLayout.setVisibility(View.VISIBLE);
                 titleBarText.setText("个人");
-                my_image.setImageResource(R.mipmap.my_image);
+                my_image.setImageResource(R.mipmap.my_image_pressed);
                // my_layout.setBackgroundResource(R.mipmap.bottom_my_press);
                 if (Fragmentmy == null) {
                     Fragmentmy = new FragmentMy();
@@ -174,6 +182,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
 
             case 4:
+                showBonusLayout.setVisibility(View.GONE);
                 titleBarLayout.setVisibility(View.GONE);
                 search_image.setImageResource(R.mipmap.sear_image);
                 // my_layout.setBackgroundResource(R.mipmap.bottom_my_press);
@@ -182,6 +191,17 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                     transaction.add(R.id.content, Fragmentsearch);
                 } else {
                     transaction.show(Fragmentsearch);
+                }
+                break;
+            case 5:
+                titleBarLayout.setVisibility(View.VISIBLE);
+                showBonusLayout.setVisibility(View.GONE);
+                titleBarText.setText("大导演");
+                if (fragmentShowBonus == null) {
+                    fragmentShowBonus = new FragmentShowBonus();
+                    transaction.add(R.id.content, fragmentShowBonus);
+                } else {
+                    transaction.show(fragmentShowBonus);
                 }
                 break;
         }
@@ -203,6 +223,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         }
         if (Fragmentsearch != null) {
             transaction.hide(Fragmentsearch);
+        }
+        if (fragmentShowBonus != null) {
+            transaction.hide(fragmentShowBonus);
         }
     }
 

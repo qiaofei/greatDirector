@@ -16,13 +16,31 @@
         android:layout_marginTop="3.0dip"
         android:gravity="center"
         android:src="@mipmap/ic_top_bar_category" />
-
-
     <TextView
         android:gravity="center"
         android:id="@+id/title_bar_text"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/text_color"
-        android:textSize="25dp" />
+        android:textSize="25dp"
+        android:layout_centerHorizontal="true" />
+    <RelativeLayout
+        android:id="@+id/search_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#1F1F1F"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="42dp"
+        android:layout_marginEnd="42dp"
+        >
+    <ImageView
+        android:id="@+id/search_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@mipmap/sear_image"
+ />
+    </RelativeLayout>
 </RelativeLayout>

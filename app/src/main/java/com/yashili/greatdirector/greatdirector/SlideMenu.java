@@ -108,7 +108,7 @@ public class SlideMenu extends ViewGroup {
         final float y = ev.getY();
 
         switch (action) {
-            case MotionEvent.ACTION_MOVE:
+           /* case MotionEvent.ACTION_MOVE:
 
                 final int xDiff = (int) Math.abs(x - mLastMotionX);
                 final int yDiff = (int) Math.abs(y - mLastMotionY);
@@ -136,7 +136,7 @@ public class SlideMenu extends ViewGroup {
                         currentScreen.cancelLongPress();
                     }
                 }
-                break;
+                break;*/
 
             case MotionEvent.ACTION_DOWN:
                 // Remember location of down touch

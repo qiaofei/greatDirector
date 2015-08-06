@@ -17,7 +17,6 @@ public class FragmentIndex extends Fragment {
     private LinearLayout hotDirectorsLayout;
     private LinearLayout newMoviesLayout;
     private LinearLayout hotMoviesLayout;
-    private LinearLayout timeToBonusLayout;
     private LinearLayout famousDirectorLayout;
     private LinearLayout movieCategoryLayout;
     private LinearLayout bonusCategoryLayout;
@@ -126,7 +125,6 @@ public class FragmentIndex extends Fragment {
         famousDirectorLayout = (LinearLayout) view.findViewById(R.id.famous_director);
         movieCategoryLayout = (LinearLayout) view.findViewById(R.id.movie_category);
         bonusCategoryLayout = (LinearLayout) view.findViewById(R.id.bonus_category);
-        timeToBonusLayout = (LinearLayout) view.findViewById(R.id.time_tobonus);
         //热门导演跳转
         LinearLayout hotDirectsorsTextLayout =
                 (LinearLayout) view.findViewById(R.id.hot_directors_text_layout);
@@ -187,8 +185,7 @@ public class FragmentIndex extends Fragment {
                 startActivity(intent);
             }
         });
-        //切换到奖项的fragment
-//        timeToBonusLayout.setOnClickListener(new);
+
         for (int i = 0; i < hotDirectorsImgIds.length; i++) {
 
             View viewHotDirectors = mInflater.inflate(R.layout.info_layout_item,
