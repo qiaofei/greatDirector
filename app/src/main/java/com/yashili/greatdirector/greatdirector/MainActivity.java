@@ -118,6 +118,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 //star_layout.setBackgroundResource(R.mipmap.bottom_my_press);
                 if (Fragmentstar == null) {
                     Fragmentstar = new FragmentStar();
+                    Fragmentstar.setContext(this);
                     transaction.add(R.id.content, Fragmentstar);
                 } else {
                     transaction.show(Fragmentstar);

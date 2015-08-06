@@ -127,6 +127,66 @@ public class FragmentIndex extends Fragment {
         movieCategoryLayout = (LinearLayout) view.findViewById(R.id.movie_category);
         bonusCategoryLayout = (LinearLayout) view.findViewById(R.id.bonus_category);
         timeToBonusLayout = (LinearLayout) view.findViewById(R.id.time_tobonus);
+        //热门导演跳转
+        LinearLayout hotDirectsorsTextLayout =
+                (LinearLayout) view.findViewById(R.id.hot_directors_text_layout);
+        hotDirectsorsTextLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), HotDirectorsActivity.class);
+                startActivity(intent);
+            }
+        });
+        //新作品上架跳转
+        LinearLayout newMoviesTextLayout =
+                (LinearLayout) view.findViewById(R.id.new_movies_text_layout);
+        newMoviesTextLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), NewMovieActivity.class);
+                startActivity(intent);
+            }
+        });
+        //观看排行跳转
+        LinearLayout hotMoviesTextLayout =
+                (LinearLayout) view.findViewById(R.id.hot_movies_text_layout);
+        hotMoviesTextLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), NewMovieActivity.class);
+                startActivity(intent);
+            }
+        });
+        //跳转名家排行
+        LinearLayout famousDirectsorsTextLayout =
+                (LinearLayout) view.findViewById(R.id.famous_directors_text_layout);
+        famousDirectsorsTextLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), HotDirectorsActivity.class);
+                startActivity(intent);
+            }
+        });
+        //跳转题材分类
+        LinearLayout moviesCategoryTextLayout =
+                (LinearLayout) view.findViewById(R.id.movies_category_text_layout);
+        moviesCategoryTextLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), NewMovieActivity.class);
+                startActivity(intent);
+            }
+        });
+        //跳转到奖项分类
+        LinearLayout bonusCategoryTextLayout =
+                (LinearLayout) view.findViewById(R.id.bonus_category_text_layout);
+        bonusCategoryTextLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), HotDirectorsActivity.class);
+                startActivity(intent);
+            }
+        });
         //切换到奖项的fragment
 //        timeToBonusLayout.setOnClickListener(new);
         for (int i = 0; i < hotDirectorsImgIds.length; i++) {
@@ -172,9 +232,6 @@ public class FragmentIndex extends Fragment {
             viewHotMovies.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     Intent intent = new Intent(getActivity(), PlayMovieActivity.class);
-                    /*Bundle bundle = new Bundle();
-                    bundle.putString("movieName", newMoviesText[i]);     //装入数据
-                    intent.putExtras(bundle);*/
                     startActivity(intent);
                 }
             });
@@ -184,9 +241,6 @@ public class FragmentIndex extends Fragment {
             viewFamousDirector.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     Intent intent = new Intent(getActivity(), PlayMovieActivity.class);
-                    /*Bundle bundle = new Bundle();
-                    bundle.putString("movieName", newMoviesText[i]);     //装入数据
-                    intent.putExtras(bundle);*/
                     startActivity(intent);
                 }
             });

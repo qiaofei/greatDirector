@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="movie_name_items">
+        <item>爱丽丝梦游仙境</item>
+        <item>阿波罗计划</item>
+    </string-array>
+</resources>

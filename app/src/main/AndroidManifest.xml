@@ -21,7 +21,13 @@
             android:name=".PlayMovieActivity">
         </activity>
         <activity
-            android:name=".DirectorInfo">
+        android:name=".DirectorInfo">
+    </activity>
+        <activity
+            android:name=".HotDirectorsActivity">
+        </activity>
+        <activity
+            android:name=".NewMovieActivity">
         </activity>
     </application>
 

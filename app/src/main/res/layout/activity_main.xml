@@ -28,7 +28,7 @@
                 android:id="@+id/index_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center"
                 android:src="@mipmap/index_image" />
         </RelativeLayout>
 
@@ -36,10 +36,10 @@
             android:id="@+id/star_layout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:background="#1F1F1F"
-            android:gravity="center_vertical">
+            android:gravity="center">
 
 
             <ImageView
@@ -56,13 +56,14 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#1F1F1F"
-            android:gravity="center_horizontal">
+            android:layout_marginTop="10dp"
+            android:gravity="center">
 
             <ImageView
                 android:id="@+id/search_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center"
                 android:src="@mipmap/sear_image" />
         </RelativeLayout>
 
@@ -70,10 +71,10 @@
             android:id="@+id/favorite_layout"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:background="#1F1F1F"
-            android:gravity="center_vertical|right">
+            android:gravity="center">
 
             <ImageView
                 android:id="@+id/favorite_image"
@@ -96,7 +97,7 @@
                 android:id="@+id/my_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center"
                 android:src="@mipmap/my_image" />
         </RelativeLayout>
     </LinearLayout>
