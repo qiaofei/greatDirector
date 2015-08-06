@@ -4,5 +4,11 @@
     <string name="time_to_bonus">距离颁奖日期还有 60 天</string>
     <string name="action_settings">Settings</string>
     <string name="curse">日程</string>
-
+    <string name="lian">李安</string>
+    <string name="zhangyimou">张艺谋</string>
+    <string name="jiazhangke">贾樟柯</string>
+    <string name="fengxiaogang">冯小刚</string>
+    <string name="chenkaige">陈凯歌</string>
+    <string name="wangjiawei">王家卫</string>
+    <string name="sipier">斯皮尔伯格</string>
 </resources>

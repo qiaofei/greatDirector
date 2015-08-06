@@ -9,10 +9,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="5dp"
         android:text="关注的导演"
-        android:layout_marginTop="20dp"
         android:textColor="#40E0D0"
-        android:textSize="15dp"/>
+        android:textSize="15dp" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="250dp">
@@ -20,6 +21,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -40,8 +43,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="@string/lian"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -56,8 +59,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="@string/jiazhangke"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -70,8 +73,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="@string/chenkaige"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -93,8 +96,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="@string/wangjiawei"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -109,8 +112,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="@string/sipier"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -123,8 +126,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="@string/lian"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -146,8 +149,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="@string/fengxiaogang"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -162,8 +165,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="@string/wangjiawei"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -176,8 +179,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="@string/lian"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -199,8 +202,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="@string/sipier"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -215,8 +218,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="@string/zhangyimou"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -229,8 +232,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="@string/lian"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -252,8 +255,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="贾樟柯"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -268,8 +271,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="贾樟柯"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -282,12 +285,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="贾樟柯"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -295,7 +299,8 @@
         android:layout_marginTop="20dp"
         android:text="关注的明星"
         android:textColor="#40E0D0"
-        android:textSize="15dp"/>
+        android:textSize="15dp" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -303,7 +308,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -322,8 +330,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="贾樟柯"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -338,8 +346,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="贾樟柯"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -352,8 +360,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="贾樟柯"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -375,8 +383,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="贾樟柯"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -391,8 +399,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="贾樟柯"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -405,8 +413,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="贾樟柯"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -428,8 +436,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="贾樟柯"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -444,8 +452,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="贾樟柯"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -458,8 +466,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="贾樟柯"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -481,8 +489,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="贾樟柯"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -497,8 +505,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="贾樟柯"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -511,8 +519,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="贾樟柯"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -534,8 +542,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="贾樟柯"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -550,8 +558,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="贾樟柯"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -564,8 +572,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#40E0D0"
-                        android:text="贾樟柯" />
+                        android:text="贾樟柯"
+                        android:textColor="#40E0D0" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

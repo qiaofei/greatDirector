@@ -73,7 +73,7 @@ public class FragmentIndex extends Fragment {
                 "陈凯歌", "张艺谋", "斯皮尔伯格", "贾樟柯", "李安", "王家卫", "冯小刚"
         };
 
-        newMoviesImgIds = new int[]{R.mipmap.dianying01, R.mipmap.dianying02, R.mipmap.dianying03,
+        newMoviesImgIds = new int[]{R.mipmap.dianying01, R.mipmap.dianying17, R.mipmap.dianying03,
                 R.mipmap.dianying04, R.mipmap.dianying18, R.mipmap.dianying06, R.mipmap.dianying07,
 
         };
@@ -82,8 +82,8 @@ public class FragmentIndex extends Fragment {
         };
 
         hotMoviesImgIds = new int[]{
-                R.mipmap.dianying08, R.mipmap.dianying09, R.mipmap.dianying10,
-                R.mipmap.dianying11, R.mipmap.dianying15, R.mipmap.dianying16, R.mipmap.dianying17,
+                R.mipmap.dianying02, R.mipmap.dianying05, R.mipmap.dianying12,
+                R.mipmap.dianying11, R.mipmap.dianying17, R.mipmap.dianying15, R.mipmap.dianying16,
         };
         hotMoviesText = new String[]{
                 "卧虎藏龙", "后窗", "非常嫌疑犯", "低级小说", "西北偏北", "好家伙", "肖申克的救赎"
@@ -98,8 +98,8 @@ public class FragmentIndex extends Fragment {
         };
         //设置题材图片和文字
         movieCategoryImgIds = new int[]{
-                R.mipmap.dianying08, R.mipmap.dianying09, R.mipmap.dianying10,
-                R.mipmap.dianying11, R.mipmap.dianying15, R.mipmap.dianying16, R.mipmap.dianying17,
+                R.mipmap.dianying04, R.mipmap.dianying06, R.mipmap.dianying17,
+                R.mipmap.dianying15, R.mipmap.dianying12, R.mipmap.dianying16, R.mipmap.dianying11,
         };
         movieCategoryText = new String[]{
                 "科幻", "儿童", "综艺", "搞笑", "纪录片", "悬疑", "动漫"

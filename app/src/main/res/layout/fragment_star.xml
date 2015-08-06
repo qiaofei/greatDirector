@@ -24,6 +24,8 @@
     <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:scrollbars="none">
 
         <LinearLayout
@@ -38,6 +40,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="5dp">
 
         <TextView
@@ -53,7 +57,9 @@
     <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scrollbars="none">
+        android:scrollbars="none"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <LinearLayout
             android:id="@+id/famous_movie_director"
@@ -67,6 +73,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="5dp">
 
         <TextView
@@ -82,7 +90,9 @@
     <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scrollbars="none">
+        android:scrollbars="none"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <LinearLayout
             android:id="@+id/famous_movier"

@@ -13,7 +13,6 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="3.0dip"
         android:layout_marginRight="3.0dip"
-        android:layout_marginTop="3.0dip"
         android:gravity="center"
         android:src="@mipmap/ic_top_bar_category" />
     <TextView
@@ -22,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/text_color"
+        android:layout_marginTop="3dp"
         android:textSize="25dp"
         android:layout_centerHorizontal="true" />
     <RelativeLayout
