@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener {
@@ -33,8 +34,11 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private int gray = 0xFF7597B3;
     private int blue =0xFF0AB2FB;
     FragmentManager fManager;
+    private SlideMenu slideMenu;
 
-
+    private TextView titleBarText;
+    private ImageView titleBarImg;
+    private RelativeLayout titleBarLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +53,13 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     //初始化四个fragment布局
     public void initViews()
     {
+        //侧边栏
+        titleBarLayout = (RelativeLayout) findViewById(R.id.title_bar_layout);
+        titleBarImg = (ImageView) findViewById(R.id.title_bar_menu_btn);
+        titleBarText = (TextView)findViewById(R.id.title_bar_text);
+        slideMenu = (SlideMenu) findViewById(R.id.slide_menu);
+        ImageView menuImg = (ImageView) findViewById(R.id.title_bar_menu_btn);
+        menuImg.setOnClickListener(this);
         //四个选择按钮的图标
         index_image = (ImageView) findViewById(R.id.index_image);
         star_image = (ImageView) findViewById(R.id.star_image);
@@ -88,6 +99,13 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             case R.id.search_layout:
                 setChioceItem(4);
                 break;
+            case R.id.title_bar_menu_btn:
+                if (slideMenu.isMainScreenShowing()) {
+                    slideMenu.openMenu();
+                } else {
+                    slideMenu.closeMenu();
+                }
+                break;
             default:
                 break;
         }
@@ -102,6 +120,8 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         hideFragments(transaction);
         switch (index) {
             case 0:
+                titleBarLayout.setVisibility(View.VISIBLE);
+                titleBarText.setText("大导演");
                 index_image.setImageResource(R.mipmap.index_image);
                 //index_layout.setBackgroundResource(R.mipmap.bottom_feed_press);
                 if (Fragmentindex == null) {
@@ -114,6 +134,8 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
 
             case 1:
+                titleBarLayout.setVisibility(View.VISIBLE);
+                titleBarText.setText("明星社区");
                 star_image.setImageResource(R.mipmap.star_image);
                 //star_layout.setBackgroundResource(R.mipmap.bottom_my_press);
                 if (Fragmentstar == null) {
@@ -126,6 +148,8 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
 
             case 2:
+                titleBarLayout.setVisibility(View.VISIBLE);
+                titleBarText.setText("关注");
                 favorite_image.setImageResource(R.mipmap.favorite_image);
                // favorite_layout.setBackgroundResource(R.mipmap.bottom_hotrank_press);
                 if (Fragmentfavorite == null) {
@@ -137,6 +161,8 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
 
             case 3:
+                titleBarLayout.setVisibility(View.VISIBLE);
+                titleBarText.setText("个人");
                 my_image.setImageResource(R.mipmap.my_image);
                // my_layout.setBackgroundResource(R.mipmap.bottom_my_press);
                 if (Fragmentmy == null) {
@@ -148,6 +174,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
 
             case 4:
+                titleBarLayout.setVisibility(View.GONE);
                 search_image.setImageResource(R.mipmap.sear_image);
                 // my_layout.setBackgroundResource(R.mipmap.bottom_my_press);
                 if (Fragmentsearch == null) {

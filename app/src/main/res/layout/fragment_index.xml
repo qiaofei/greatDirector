@@ -4,16 +4,6 @@
     android:layout_height="match_parent"
     android:background="#1F1F1F"
     android:orientation="vertical">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="大导演"
-        android:textColor="#40E0D0"
-        android:textSize="25dp" />
-
-
     <LinearLayout
         android:id="@+id/time_tobonus"
         android:layout_width="match_parent"

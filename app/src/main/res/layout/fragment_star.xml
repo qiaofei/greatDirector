@@ -4,16 +4,6 @@
     android:layout_height="match_parent"
     android:background="@color/background_color"
     android:orientation="vertical">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="明星社区"
-        android:textColor="@color/text_color"
-        android:textSize="20dp" />
-
     <LinearLayout
         android:id="@+id/famous_movie_comment_text_layout"
         android:layout_width="wrap_content"

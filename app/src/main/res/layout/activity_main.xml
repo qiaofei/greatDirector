@@ -2,7 +2,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+<com.yashili.greatdirector.greatdirector.SlideMenu
+    android:id="@+id/slide_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/layout_menu" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <include layout="@layout/layout_title_bar" />
     <FrameLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
@@ -101,4 +111,6 @@
                 android:src="@mipmap/my_image" />
         </RelativeLayout>
     </LinearLayout>
+    </LinearLayout>
+</com.yashili.greatdirector.greatdirector.SlideMenu>
 </LinearLayout>
