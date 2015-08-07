@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.yanshili.greatdirector.activities.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,9 +17,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".PlayMovieActivity"></activity>
-        <activity android:name=".DirectorInfo"></activity>
-        <activity android:name=".HotDirectorsActivity"></activity>
-        <activity android:name=".NewMovieActivity"></activity>
+        <activity android:name="com.yanshili.greatdirector.activities.PlayMovieActivity"></activity>
+        <activity android:name="com.yanshili.greatdirector.utils.DirectorInfo"></activity>
+        <activity android:name="com.yanshili.greatdirector.activities.HotDirectorsActivity"></activity>
+        <activity android:name="com.yanshili.greatdirector.activities.NewMovieActivity"></activity>
     </application>
 </manifest>

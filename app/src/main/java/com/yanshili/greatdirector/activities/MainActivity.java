@@ -1,4 +1,4 @@
-package com.yashili.greatdirector.greatdirector;
+package com.yanshili.greatdirector.activities;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -10,6 +10,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.yanshili.greatdirector.fragment.FragmentFavorite;
+import com.yanshili.greatdirector.fragment.FragmentIndex;
+import com.yanshili.greatdirector.fragment.FragmentMy;
+import com.yanshili.greatdirector.fragment.FragmentSearch;
+import com.yanshili.greatdirector.fragment.FragmentShowBonus;
+import com.yanshili.greatdirector.fragment.FragmentStar;
+import com.yanshili.greatdirector.utils.SlideMenu;
+import com.yashili.greatdirector.greatdirector.R;
 
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener {

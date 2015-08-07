@@ -1,4 +1,4 @@
-package com.yashili.greatdirector.greatdirector;
+package com.yanshili.greatdirector.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.yanshili.greatdirector.utils.DirectorInfo;
+import com.yashili.greatdirector.greatdirector.R;
 
 /**
  * Created by Administrator on 2015/7/25.

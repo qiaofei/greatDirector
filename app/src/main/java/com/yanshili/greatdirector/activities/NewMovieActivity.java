@@ -1,7 +1,9 @@
-package com.yashili.greatdirector.greatdirector;
+package com.yanshili.greatdirector.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.yashili.greatdirector.greatdirector.R;
 
 /**
  * Created by LaoZhuang on 2015/8/5.

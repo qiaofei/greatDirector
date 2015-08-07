@@ -1,4 +1,4 @@
-package com.yashili.greatdirector.greatdirector;
+package com.yanshili.greatdirector.fragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.yashili.greatdirector.greatdirector.R;
 
 /**
  * Created by LaoZhuang on 2015/8/4.

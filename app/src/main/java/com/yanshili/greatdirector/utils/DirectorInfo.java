@@ -1,10 +1,13 @@
-package com.yashili.greatdirector.greatdirector;
+package com.yanshili.greatdirector.utils;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.yanshili.greatdirector.activities.PlayMovieActivity;
+import com.yashili.greatdirector.greatdirector.R;
 
 /**
  * Created by LaoZhuang on 2015/7/28.

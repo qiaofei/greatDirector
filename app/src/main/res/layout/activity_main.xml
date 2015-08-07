@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.yashili.greatdirector.greatdirector.SlideMenu
+    <com.yanshili.greatdirector.utils.SlideMenu
         android:id="@+id/slide_menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -184,5 +184,5 @@
                 </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
-    </com.yashili.greatdirector.greatdirector.SlideMenu>
+    </com.yanshili.greatdirector.utils.SlideMenu>
 </LinearLayout>
