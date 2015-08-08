@@ -35,10 +35,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
                         android:text="热门导演"
                         android:textColor="#40E0D0"
-                        android:textSize="18dp" />
+                        android:textSize="14dp" />
                 </LinearLayout>
 
                 <HorizontalScrollView
@@ -73,10 +72,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="5dp"
                         android:text="新作品上架"
                         android:textColor="#40E0D0"
-                        android:textSize="18dp" />
+                        android:textSize="13dp" />
                 </LinearLayout>
 
                 <HorizontalScrollView
@@ -111,10 +109,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="5dp"
                         android:text="观看排行"
                         android:textColor="#40E0D0"
-                        android:textSize="18dp" />
+                        android:textSize="14dp" />
                 </LinearLayout>
 
                 <HorizontalScrollView
@@ -149,10 +146,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="5dp"
                         android:text="名家排行"
                         android:textColor="#40E0D0"
-                        android:textSize="18dp" />
+                        android:textSize="14dp" />
                 </LinearLayout>
 
                 <HorizontalScrollView
@@ -187,10 +183,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="5dp"
                         android:text="题材分类"
                         android:textColor="#40E0D0"
-                        android:textSize="18dp" />
+                        android:textSize="14dp" />
                 </LinearLayout>
 
                 <HorizontalScrollView
@@ -225,10 +220,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="5dp"
                         android:text="奖项分类"
                         android:textColor="#40E0D0"
-                        android:textSize="18dp" />
+                        android:textSize="14dp" />
                 </LinearLayout>
 
                 <HorizontalScrollView

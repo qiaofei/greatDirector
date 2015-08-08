@@ -8,7 +8,7 @@ public class ShowBonus {
     private String directorName;
     private int moviesCount;
 
-    ShowBonus(String bonusCatrgory, String directorName, int moviesCount) {
+    public ShowBonus(String bonusCatrgory, String directorName, int moviesCount) {
         this.bonusCatrgory = bonusCatrgory;
         this.directorName = directorName;
         this.moviesCount = moviesCount;

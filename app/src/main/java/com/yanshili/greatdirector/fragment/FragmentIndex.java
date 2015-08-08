@@ -291,7 +291,6 @@ public class FragmentIndex extends Fragment {
             TextView textBonusCategory = (TextView) viewBonusCategory
                     .findViewById(R.id.textview_info);
             textBonusCategory.setText(bonusCategoryText[i]);
-
             //将item添加到对应的layout中去
             hotDirectorsLayout.addView(viewHotDirectors);
             newMoviesLayout.addView(viewNewMovies);

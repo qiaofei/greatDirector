@@ -1,9 +1,12 @@
 package com.yanshili.greatdirector.activities;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
@@ -19,6 +22,11 @@ import com.yanshili.greatdirector.fragment.FragmentShowBonus;
 import com.yanshili.greatdirector.fragment.FragmentStar;
 import com.yanshili.greatdirector.utils.SlideMenu;
 import com.yashili.greatdirector.greatdirector.R;
+
+import org.w3c.dom.Text;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener {
@@ -42,11 +50,17 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private ImageView my_image;
     private ImageView search_image;
 
+    private TextView textViewIndex;
+    private TextView textViewStar;
+    private TextView textViewFavorite;
+    private TextView textViewMy;
     FragmentManager fManager;
     private SlideMenu slideMenu;
 
     private TextView titleBarText;
-    private RelativeLayout titleBarLayout;
+    private LinearLayout titleBarLayout;
+    private static int currentId = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,14 +70,37 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         initViews();
         //默认选择首页
         setChioceItem(0);
+        //handler
+        final Handler mHandler = new Handler() {
+
+            final int[] imgId = new int[]{R.mipmap.timetobonus, R.mipmap.touxiang3, R.mipmap.touxiang1};
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                    case 0x123:
+                        showBonusLayout.setBackgroundResource(imgId[(currentId + 1) % imgId.length]);
+                        currentId++;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        };
+//        编写Task
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                // TODO Auto-generated method stub
+                mHandler.sendEmptyMessage(0x123);
+            }
+        }, 0, 3000);
+
     }
 
     //初始化四个fragment布局
-    public void initViews()
-    {
+    public void initViews() {
         //侧边栏
-        titleBarLayout = (RelativeLayout) findViewById(R.id.title_bar_layout);
-        titleBarText = (TextView)findViewById(R.id.title_bar_text);
+        titleBarLayout = (LinearLayout) findViewById(R.id.title_bar_layout);
+        titleBarText = (TextView) findViewById(R.id.title_bar_text);
         slideMenu = (SlideMenu) findViewById(R.id.slide_menu);
         ImageView menuImg = (ImageView) findViewById(R.id.title_bar_menu_btn);
         menuImg.setOnClickListener(this);
@@ -73,15 +110,18 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         favorite_image = (ImageView) findViewById(R.id.favorite_image);
         my_image = (ImageView) findViewById(R.id.my_image);
         search_image = (ImageView) findViewById(R.id.search_image);
-
+        //四个导航的文字
+        textViewIndex = (TextView) findViewById(R.id.textview_index);
+        textViewStar = (TextView) findViewById(R.id.textview_star);
+        textViewFavorite = (TextView) findViewById(R.id.textview_farorite);
+        textViewMy = (TextView) findViewById(R.id.textview_my);
         //四个切换按钮的布局id
         index_layout = (RelativeLayout) findViewById(R.id.index_layout);
         star_layout = (RelativeLayout) findViewById(R.id.star_layout);
         favorite_layout = (RelativeLayout) findViewById(R.id.favorite_layout);
         my_layout = (RelativeLayout) findViewById(R.id.my_layout);
         search_layout = (RelativeLayout) findViewById(R.id.search_layout);
-        showBonusLayout = (LinearLayout)findViewById(R.id.time_tobonus);
-
+        showBonusLayout = (LinearLayout) findViewById(R.id.time_tobonus);
         //设置布局侦听事件
         index_layout.setOnClickListener(this);
         star_layout.setOnClickListener(this);
@@ -121,21 +161,25 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
             default:
                 break;
+
         }
 
     }
 
     //主界面fragment布局选择
-    public void setChioceItem(int index)
-    {
+    public void setChioceItem(int index) {
         FragmentTransaction transaction = fManager.beginTransaction();
-        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+//        transaction.setTransition(FragmentTransaction.TRANSIT_ENTER_MASK);
+        transaction.setCustomAnimations(R.anim.abc_slide_in_top, R.anim.abc_slide_out_top);
+        transaction.addToBackStack(null);
         clearChioce();
         hideFragments(transaction);
         switch (index) {
-            case 0:showBonusLayout.setVisibility(View.VISIBLE);
+            case 0:
+                showBonusLayout.setVisibility(View.VISIBLE);
                 titleBarLayout.setVisibility(View.VISIBLE);
                 titleBarText.setText("大导演");
+                textViewIndex.setTextColor(getResources().getColor(R.color.text_color));
                 index_image.setImageResource(R.mipmap.index_image_pressed);
                 //index_layout.setBackgroundResource(R.mipmap.bottom_feed_press);
                 if (Fragmentindex == null) {
@@ -148,6 +192,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
 
             case 1:
+                textViewStar.setTextColor(getResources().getColor(R.color.text_color));
                 showBonusLayout.setVisibility(View.GONE);
                 titleBarLayout.setVisibility(View.VISIBLE);
                 titleBarText.setText("明星社区");
@@ -163,11 +208,12 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
 
             case 2:
+                textViewFavorite.setTextColor(getResources().getColor(R.color.text_color));
                 showBonusLayout.setVisibility(View.GONE);
                 titleBarLayout.setVisibility(View.VISIBLE);
                 titleBarText.setText("关注");
                 favorite_image.setImageResource(R.mipmap.favorite_image_pressed);
-               // favorite_layout.setBackgroundResource(R.mipmap.bottom_hotrank_press);
+                // favorite_layout.setBackgroundResource(R.mipmap.bottom_hotrank_press);
                 if (Fragmentfavorite == null) {
                     Fragmentfavorite = new FragmentFavorite();
                     transaction.add(R.id.content, Fragmentfavorite);
@@ -177,11 +223,13 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
 
             case 3:
+                textViewMy.setTextColor(getResources().getColor(R.color.text_color));
                 showBonusLayout.setVisibility(View.GONE);
                 titleBarLayout.setVisibility(View.VISIBLE);
                 titleBarText.setText("个人");
+
                 my_image.setImageResource(R.mipmap.my_image_pressed);
-               // my_layout.setBackgroundResource(R.mipmap.bottom_my_press);
+                // my_layout.setBackgroundResource(R.mipmap.bottom_my_press);
                 if (Fragmentmy == null) {
                     Fragmentmy = new FragmentMy();
                     transaction.add(R.id.content, Fragmentmy);
@@ -239,22 +287,21 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     }
 
 
-    public void clearChioce()
-    {
+    public void clearChioce() {
         index_image.setImageResource(R.mipmap.index_image);
-//        index_layout.setBackgroundColor(whirt);
-
+        textViewIndex.setTextColor(getResources().getColor(R.color.white));
 
         star_image.setImageResource(R.mipmap.star_image);
-//        star_layout.setBackgroundColor(whirt);
-
+        textViewStar.setTextColor(getResources().getColor(R.color.white));
 
         favorite_image.setImageResource(R.mipmap.favorite_image);
-//        favorite_layout.setBackgroundColor(whirt);
+        textViewFavorite.setTextColor(getResources().getColor(R.color.white));
 
         my_image.setImageResource(R.mipmap.my_image);
-//        my_layout.setBackgroundColor(whirt);
+        textViewMy.setTextColor(getResources().getColor(R.color.white));
+
         search_image.setImageResource(R.mipmap.sear_image);
     }
+
 
 }
